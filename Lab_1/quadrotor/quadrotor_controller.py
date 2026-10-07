@@ -213,14 +213,14 @@ def main():
 
     hover_thrust = 0.26487
 
-    Kx = 0.20
-    Ky = 0.20
-    Kz = 0.15
-    Kyaw = 0.40
+    Kx = 0.05
+    Ky = 0.05
+    Kz = 0.10
+    Kyaw = 0.20
 
-    max_roll = 0.15
-    max_pitch = 0.15
-    max_yaw = 0.60
+    max_roll = 0.05
+    max_pitch = 0.05
+    max_yaw = 0.30
 
     min_thrust = 0.0
     max_thrust = 0.35
@@ -235,10 +235,10 @@ def main():
     target_yaw = 0.0
 
     # Keyboard movement amount
-    move_step = 0.30
+    move_step = 0.02
 
     # Yaw movement
-    yaw_step = math.radians(10.0)
+    yaw_step = math.radians(5.0)
 
     # ========================================================
     # TERMINAL KEYBOARD MODE
