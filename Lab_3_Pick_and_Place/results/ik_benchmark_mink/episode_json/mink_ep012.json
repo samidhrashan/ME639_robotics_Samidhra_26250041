@@ -1,0 +1,13 @@
+{
+  "ik_method": "mink",
+  "success": true,
+  "failure_reason": null,
+  "episode_wall_time_s": 13.316820899955928,
+  "ik_solver_calls": 8090,
+  "ik_solver_time_s": 6.719875100185163,
+  "mean_solver_time_ms": 0.8306396909994022,
+  "velocity_limit_saturations": 0,
+  "joint_limit_saturations": 0,
+  "joint_limit_violations": 0,
+  "min_pad_table_clearance_m": 0.0007273306453763478,
+  "cube_pos": 

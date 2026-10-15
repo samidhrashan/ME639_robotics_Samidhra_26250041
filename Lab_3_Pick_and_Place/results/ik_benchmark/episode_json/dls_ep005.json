@@ -1,0 +1,13 @@
+{
+  "ik_method": "dls",
+  "success": true,
+  "failure_reason": null,
+  "episode_wall_time_s": 12.987725500017405,
+  "ik_solver_calls": 6985,
+  "ik_solver_time_s": 5.837936391704716,
+  "mean_solver_time_ms": 0.8357818742598019,
+  "velocity_limit_saturations": 807,
+  "joint_limit_saturations": 491,
+  "joint_limit_violations": 497,
+  "min_pad_table_clearance_m": 0.000740749541544905,
+  "cube_pos": 

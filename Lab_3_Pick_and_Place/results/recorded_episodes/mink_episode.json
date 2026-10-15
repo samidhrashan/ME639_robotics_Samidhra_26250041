@@ -1,0 +1,18 @@
+{
+  "ik_method": "mink",
+  "success": false,
+  "failure_reason": "Viewer closed.",
+  "episode_wall_time_s": 8.432456599897705,
+  "ik_solver_calls": 1095,
+  "ik_solver_time_s": 1.2953271018341184,
+  "mean_solver_time_ms": 1.182947124962665,
+  "velocity_limit_saturations": 0,
+  "joint_limit_saturations": 0,
+  "joint_limit_violations": 0,
+  "min_pad_table_clearance_m": 0.15133128766920245,
+  "cube_pos_at_failure": [
+    0.36,
+    0.15,
+    0.13189224458156584
+  ]
+}

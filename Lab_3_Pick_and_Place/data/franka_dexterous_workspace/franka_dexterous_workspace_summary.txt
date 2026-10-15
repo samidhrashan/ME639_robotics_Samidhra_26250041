@@ -1,0 +1,16 @@
+FRANKA PANDA DEXTEROUS WORKSPACE ANALYSIS
+============================================================
+
+Number of sampled configurations: 20000
+Random seed: 42
+Spatial cell size: 0.0500 m
+Minimum orientation bins: 3
+
+Workspace range:
+X = -0.849539 to 0.852953 m
+Y = -0.850338 to 0.848461 m
+Z = -0.314471 to 1.184875 m
+
+Occupied workspace cells: 11509
+Dexterous workspace cells: 1953
+Dexterous workspace percentage: 16.9693%

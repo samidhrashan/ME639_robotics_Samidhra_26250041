@@ -1,0 +1,2 @@
+episode,seed,cube_start_x,cube_start_y,cube_start_yaw_rad,finger_cube_contact,cube_lift_dz_m,cube_final_x,cube_final_y,cube_final_z,success,failure_reason
+1,42,0.45,0.0,0.0,True,0.08576944070786252,0.4487786380094636,-0.3132289555408994,0.5498922445797831,True,placed inside tray

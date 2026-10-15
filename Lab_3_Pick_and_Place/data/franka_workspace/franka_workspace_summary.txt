@@ -1,0 +1,20 @@
+ME639 Robotics Lab 3 - Franka Panda Workspace
+============================================================
+
+Number of samples: 20000
+Random seed: 42
+End-effector reference body: hand
+
+Workspace limits:
+X: -0.851871 to 0.844231 m
+Y: -0.854298 to 0.852399 m
+Z: -0.321194 to 1.187438 m
+
+Arm joint limits:
+joint1: -2.897300 to 2.897300 rad (-166.00 to 166.00 deg)
+joint2: -1.762800 to 1.762800 rad (-101.00 to 101.00 deg)
+joint3: -2.897300 to 2.897300 rad (-166.00 to 166.00 deg)
+joint4: -3.071800 to -0.069800 rad (-176.00 to -4.00 deg)
+joint5: -2.897300 to 2.897300 rad (-166.00 to 166.00 deg)
+joint6: -0.017500 to 3.752500 rad (-1.00 to 215.00 deg)
+joint7: -2.897300 to 2.897300 rad (-166.00 to 166.00 deg)

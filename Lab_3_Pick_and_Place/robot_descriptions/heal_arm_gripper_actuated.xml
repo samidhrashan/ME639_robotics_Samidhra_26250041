@@ -1,0 +1,718 @@
+<mujoco model="HEAL_with_Robotiq_2F85">
+
+  <asset>
+
+    <!-- HEAL Arm Meshes -->
+    <mesh name="base_link" file="heal_meshes/base_link.STL"/>
+    <mesh name="link1" file="heal_meshes/link_1.STL"/>
+    <mesh name="link2" file="heal_meshes/link_2.STL"/>
+    <mesh name="link3" file="heal_meshes/link_3.STL"/>
+    <mesh name="link4" file="heal_meshes/link_4.STL"/>
+    <mesh name="link5" file="heal_meshes/link_5.STL"/>
+    <mesh name="end_effector" file="heal_meshes/end_effector.STL"/>
+
+    <!-- Robotiq 2F-85 -->
+    <mesh name="base" file="robotiq_2f85_v4/assets/base.stl"/>
+    <mesh name="base_coupling" file="robotiq_2f85_v4/assets/base_coupling.stl"/>
+    <mesh name="c-a01-85-open" file="robotiq_2f85_v4/assets/c-a01-85-open.stl"/>
+    <mesh name="driver" file="robotiq_2f85_v4/assets/driver.stl"/>
+    <mesh name="coupler" file="robotiq_2f85_v4/assets/coupler.stl"/>
+    <mesh name="spring_link" file="robotiq_2f85_v4/assets/spring_link.stl"/>
+    <mesh name="follower" file="robotiq_2f85_v4/assets/follower.stl"/>
+    <mesh name="tongue" file="robotiq_2f85_v4/assets/tongue.stl"/>
+
+    <!-- Materials -->
+    <material name="arm" rgba="0.8 0.8 0.8 1"/>
+    <material name="black" rgba="0.05 0.05 0.05 1"/>
+    <material name="metal" rgba="0.45 0.45 0.45 1"/>
+    <material name="pad" rgba="0.55 0.55 0.55 1"/>
+
+  </asset>
+
+  <worldbody>
+
+    <!-- ==================================================== -->
+    <!-- HEAL BASE -->
+    <!-- ==================================================== -->
+
+    <body name="base_link" pos="0 0 -0.08">
+
+      <geom
+        name="base_link_visual"
+        type="mesh"
+        mesh="base_link"
+        group="1"
+        contype="0"
+        conaffinity="0"/>
+
+      <geom
+        name="base_link_collision"
+        type="mesh"
+        mesh="base_link"
+        group="0"
+        contype="0"
+        conaffinity="0"
+        material="arm"/>
+
+      <!-- LINK 1 -->
+
+      <body name="link_1" pos="0 0 0.171">
+
+        <joint
+          name="joint_1"
+          pos="0 0 0"
+          axis="0 0 -1"
+          range="-3.14159 3.14159"
+          damping="55"
+          frictionloss="0.1"
+          actuatorfrcrange="-10000 10000"/>
+
+        <geom
+          name="link_1_visual"
+          type="mesh"
+          mesh="link1"
+          group="1"
+          contype="0"
+          conaffinity="0"
+          material="arm"/>
+
+        <geom
+          name="link_1_collision"
+          type="mesh"
+          mesh="link1"
+          group="0"/>
+
+        <!-- LINK 2 -->
+
+        <body
+          name="link_2"
+          pos="0 0.0875 0.1498"
+          quat="0.707105 0.707108 0 0">
+
+          <joint
+            name="joint_2"
+            pos="0 0 0"
+            axis="0 0 -1"
+            range="-2.61799 2.61799"
+            damping="55"
+            frictionloss="0.1"
+            actuatorfrcrange="-10000 10000"/>
+
+          <geom
+            name="link_2_visual"
+            type="mesh"
+            mesh="link2"
+            group="1"
+            contype="0"
+            conaffinity="0"
+            material="arm"/>
+
+          <geom
+            name="link_2_collision"
+            type="mesh"
+            mesh="link2"
+            group="0"/>
+
+          <!-- LINK 3 -->
+
+          <body
+            name="link_3"
+            pos="0 0.3 0"
+            euler="0 0 -1.57">
+
+            <joint
+              name="joint_3"
+              pos="0 0 0"
+              axis="0 0 -1"
+              range="-2.61799 2.61799"
+              damping="55"
+              frictionloss="0.1"
+              actuatorfrcrange="-10000 10000"/>
+
+            <geom
+              name="link_3_visual"
+              type="mesh"
+              mesh="link3"
+              group="1"
+              contype="0"
+              conaffinity="0"
+              material="arm"/>
+
+            <geom
+              name="link_3_collision"
+              type="mesh"
+              mesh="link3"
+              group="0"/>
+
+            <!-- LINK 4 -->
+
+            <body
+              name="link_4"
+              pos="0 0.1593 0.0875"
+              euler="-1.57 0 0">
+
+              <joint
+                name="joint_4"
+                pos="0 0 0"
+                axis="0 0 -1"
+                range="-3.14159 3.14159"
+                damping="55"
+                frictionloss="0.1"
+                actuatorfrcrange="-10000 10000"/>
+
+              <geom
+                name="link_4_visual"
+                type="mesh"
+                mesh="link4"
+                group="1"
+                contype="0"
+                conaffinity="0"
+                material="arm"/>
+
+              <geom
+                name="link_4_collision"
+                type="mesh"
+                mesh="link4"
+                group="0"/>
+
+              <!-- LINK 5 -->
+
+              <body
+                name="link_5"
+                pos="0 0.03185 0.16105"
+                euler="0.50951 0 1.57">
+
+                <joint
+                  name="joint_5"
+                  pos="0 0 0"
+                  axis="0 0 -1"
+                  range="-2.61799 2.61799"
+                  damping="55"
+                  frictionloss="0.1"
+                  actuatorfrcrange="-10000 10000"/>
+
+                <geom
+                  name="link_5_visual"
+                  type="mesh"
+                  mesh="link5"
+                  group="1"
+                  contype="0"
+                  conaffinity="0"
+                  material="arm"/>
+
+                <geom
+                  name="link_5_collision"
+                  type="mesh"
+                  mesh="link5"
+                  group="0"/>
+
+                <!-- END EFFECTOR -->
+
+                <body
+                  name="end_effector"
+                  pos="0 -0.1227 0.0654"
+                  quat="0.707105 0.707108 0 0">
+
+                  <joint
+                    name="joint_6"
+                    pos="0 0 0"
+                    axis="0 0 -1"
+                    range="-3.14159 3.14159"
+                    damping="55"
+                    frictionloss="0.1"
+                    actuatorfrcrange="-10000 10000"/>
+
+                  <geom
+                    name="end_effector_visual"
+                    type="mesh"
+                    mesh="end_effector"
+                    group="1"
+                    contype="0"
+                    conaffinity="0"
+                    material="arm"/>
+
+                  <geom
+                    name="end_effector_collision"
+                    type="mesh"
+                    mesh="end_effector"
+                    group="0"
+                    contype="0"
+                    conaffinity="0"
+                    rgba="0.8 0.8 0.8 0"/>
+
+                  <!-- ================================================= -->
+                  <!-- ROBOTIQ BASE -->
+                  <!-- ================================================= -->
+
+                  <body
+                    name="gripper_base"
+                    pos="0 0 0"
+                    quat="1 0 0 0">
+
+                    <inertial
+                      pos="0 0 0"
+                      mass="0.5"
+                      diaginertia="0.001 0.001 0.001"/>
+
+                    <site
+                      name="pinch"
+                      pos="0 0 0.13655"
+                      size="0.008"
+                      rgba="0 1 0 0"/>
+
+                    <!-- ================================================= -->
+                    <!-- GRASP PADS (fixed, on gripper_base at pinch)      -->
+                    <!-- ================================================= -->
+                    <!-- Inner faces are 27 mm apart. Cube is 24 mm wide.   -->
+                    <!-- Cube wedges between them when pinch reaches cube.  -->
+
+                    <body
+                      name="left_pad_slide"
+                      pos="0 0 0"
+                      quat="1 0 0 0">
+
+                      <joint
+                        name="left_pad_slide_joint"
+                        type="slide"
+                        axis="-1 0 0"
+                        range="-0.03 0.0"
+                        damping="2.0"
+                        armature="0.001"
+                        stiffness="0"
+                        springref="0"/>
+
+                      <geom
+                        name="left_pad_geom"
+                        type="box"
+                        pos="-0.02425 0 0.13655"
+                        size="0.004 0.011 0.0105" 
+                        rgba="0.035 0.035 0.035 1" 
+                        friction="2.5 0.1 0.001" 
+                        condim="4" 
+                        solref="0.004 1" priority="1" 
+                        solimp="0.95 0.99 0.001"/>
+                    </body>
+
+                    <body
+                      name="right_pad_slide"
+                      pos="0 0 0"
+                      quat="1 0 0 0">
+
+                      <joint
+                        name="right_pad_slide_joint"
+                        type="slide"
+                        axis="1 0 0"
+                        range="-0.03 0.0"
+                        damping="2.0"
+                        armature="0.001"
+                        stiffness="0"
+                        springref="0"/>
+
+                      <geom
+                        name="right_pad_geom"
+                        type="box"
+                        pos="0.02425 0 0.13655"
+                        size="0.004 0.011 0.0105" 
+                        rgba="0.035 0.035 0.035 1" 
+                        friction="2.5 0.1 0.001" 
+                        condim="4" 
+                        solref="0.004 1" priority="1" 
+                        solimp="0.95 0.99 0.001"/>
+
+                    </body>
+
+                    <!-- ================================================= -->
+                    <!-- ROBOTIQ VISUALS ONLY (no collision)               -->
+                    <!-- ================================================= -->
+
+                    <geom
+                      name="gripper_base_visual"
+                      type="mesh"
+                      mesh="base"
+                      pos="0 0 0"
+                      quat="0 0 0 1"
+                      material="black"
+                      contype="0"
+                      conaffinity="0"
+                      group="1"/>
+
+                    <geom
+                      name="gripper_base_coupling"
+                      type="mesh"
+                      mesh="base_coupling"
+                      pos="0 0 0.004"
+                      quat="1 -1 0 0"
+                      material="black"
+                      contype="0"
+                      conaffinity="0"
+                      group="11"/>
+
+                    <geom
+                      name="gripper_open_body"
+                      type="mesh"
+                      mesh="c-a01-85-open"
+                      pos="0 0 0.0108"
+                      quat="1 0 0 0"
+                      material="metal"
+                      contype="0"
+                      conaffinity="0"
+                      group="1"/>
+
+                    <!-- ================================================= -->
+                    <!-- LEFT DRIVER                                       -->
+                    <!-- ================================================= -->
+
+                    <body
+                      name="left_driver"
+                      pos="-0.0306011 0.00475 0.0657045"
+                      quat="1 -1 0 0">
+
+                      <inertial
+                        pos="0 0 0"
+                        mass="0.1"
+                        diaginertia="0.0001 0.0001 0.0001"/>
+
+                      <joint
+                        name="left_driver_joint"
+                        range="0 0.9"
+                        armature="0.005"
+                        damping="0.1"
+                        solimplimit="0.95 0.99 0.001"
+                        solreflimit="0.005 1"/>
+
+                      <geom
+                        name="left_driver_geom"
+                        type="mesh"
+                        mesh="driver"
+                        pos="0.0306011 0.0549045 -0.0047"
+                        quat="1 1 0 0"
+                        material="metal"
+                        contype="0"
+                        conaffinity="0"
+                        group="1"/>
+
+                      <body
+                        name="left_coupler"
+                        pos="-0.0314249 0.00453223 -0.0102"
+                        quat="0 0 0 1">
+
+                        <geom
+                          name="left_coupler_geom"
+                          type="mesh"
+                          mesh="coupler"
+                          pos="-0.062026 -0.0503723 0.0055"
+                          quat="1 -1 0 0"
+                          material="black"
+                          contype="0"
+                          conaffinity="0"
+                          group="1"/>
+
+                      </body>
+                    </body>
+
+                    <!-- ================================================= -->
+                    <!-- LEFT SPRING LINK                                  -->
+                    <!-- ================================================= -->
+
+                    <body
+                      name="left_spring_link"
+                      pos="-0.0127 -0.012 0.07222"
+                      quat="1 -1 0 0">
+
+                      <inertial
+                        pos="0 0 0"
+                        mass="0.05"
+                        diaginertia="0.00005 0.00005 0.00005"/>
+
+                      <joint
+                        name="left_spring_link_joint"
+                        range="-0.29670597283 0.9"
+                        armature="0.001"
+                        stiffness="0.05"
+                        springref="2.62"
+                        damping="0.00125"/>
+
+                      <geom
+                        name="left_spring_geom"
+                        type="mesh"
+                        mesh="spring_link"
+                        pos="0.0127 0.06142 0.01205"
+                        quat="1 1 0 0"
+                        material="black"
+                        contype="0"
+                        conaffinity="0"
+                        group="1"/>
+
+                      <!-- LEFT FOLLOWER -->
+
+                      <body
+                        name="left_follower"
+                        pos="-0.0382079 -0.0425003 0.00295"
+                        quat="0 -1 -1.90231e-05 0">
+
+                        <inertial
+                          pos="0 0 0"
+                          mass="0.05"
+                          diaginertia="0.00005 0.00005 0.00005"/>
+
+                        <joint
+                          name="left_follower_joint"
+                          range="-0.872664 0.9"
+                          armature="0.001"
+                          solimplimit="0.95 0.99 0.001"
+                          solreflimit="0.005 1"/>
+
+                        <geom
+                          name="left_follower_geom"
+                          type="mesh"
+                          mesh="follower"
+                          pos="0.0509079 -0.10392 -0.0091"
+                          quat="1 -1 0 0"
+                          material="black"
+                          contype="0"
+                          conaffinity="0"
+                          group="1"/>
+
+                        <geom
+                          name="left_tongue_geom"
+                          type="mesh"
+                          mesh="tongue"
+                          pos="0.0509079 -0.10392 -0.0091"
+                          quat="1 -1 0 0"
+                          material="black"
+                          contype="0"
+                          conaffinity="0"
+                          group="1"/>
+
+                      </body>
+                    </body>
+
+                    <!-- ================================================= -->
+                    <!-- RIGHT DRIVER                                      -->
+                    <!-- ================================================= -->
+
+                    <body
+                      name="right_driver"
+                      pos="0.0306011 -0.00475 0.0657045"
+                      quat="0 0 -1 1">
+
+                      <inertial
+                        pos="0 0 0"
+                        mass="0.05"
+                        diaginertia="0.00005 0.00005 0.00005"/>
+
+                      <joint
+                        name="right_driver_joint"
+                        range="0 0.9"
+                        armature="0.005"
+                        damping="0.1"
+                        solimplimit="0.95 0.99 0.001"
+                        solreflimit="0.005 1"/>
+
+                      <geom
+                        name="right_driver_geom"
+                        type="mesh"
+                        mesh="driver"
+                        pos="0.0306011 0.0549045 -0.0047"
+                        quat="1 1 0 0"
+                        material="metal"
+                        contype="0"
+                        conaffinity="0"
+                        group="1"/>
+
+                      <body
+                        name="right_coupler"
+                        pos="-0.0314249 0.00453223 -0.0102"
+                        quat="0 0 0 1">
+
+                        <geom
+                          name="right_coupler_geom"
+                          type="mesh"
+                          mesh="coupler"
+                          pos="-0.062026 -0.0503723 0.0055"
+                          quat="1 -1 0 0"
+                          material="black"
+                          contype="0"
+                          conaffinity="0"
+                          group="1"/>
+
+                      </body>
+                    </body>
+
+                    <!-- ================================================= -->
+                    <!-- RIGHT SPRING LINK                                 -->
+                    <!-- ================================================= -->
+
+                    <body
+                      name="right_spring_link"
+                      pos="0.0127 0.012 0.07222"
+                      quat="0 0 -1 1">
+
+                      <inertial
+                        pos="0 0 0"
+                        mass="0.05"
+                        diaginertia="0.00005 0.00005 0.00005"/>
+
+                      <joint
+                        name="right_spring_link_joint"
+                        range="-0.29670597283 0.9"
+                        armature="0.001"
+                        stiffness="0.05"
+                        springref="2.62"
+                        damping="0.00125"/>
+
+                      <geom
+                        name="right_spring_geom"
+                        type="mesh"
+                        mesh="spring_link"
+                        pos="0.0127 0.06142 0.01205"
+                        quat="1 1 0 0"
+                        material="black"
+                        contype="0"
+                        conaffinity="0"
+                        group="1"/>
+
+                      <!-- RIGHT FOLLOWER -->
+
+                      <body
+                        name="right_follower"
+                        pos="-0.0382079 -0.0425003 0.00295"
+                        quat="0 -1 0 0">
+
+                        <inertial
+                          pos="0 0 0"
+                          mass="0.05"
+                          diaginertia="0.00005 0.00005 0.00005"/>
+
+                        <joint
+                          name="right_follower_joint"
+                          range="-0.872664 0.9"
+                          armature="0.001"
+                          solimplimit="0.95 0.99 0.001"
+                          solreflimit="0.005 1"/>
+
+                        <geom
+                          name="right_follower_geom"
+                          type="mesh"
+                          mesh="follower"
+                          pos="0.0509079 -0.10392 -0.0091"
+                          quat="1 -1 0 0"
+                          material="black"
+                          contype="0"
+                          conaffinity="0"
+                          group="1"/>
+
+                        <geom
+                          name="right_tongue_geom"
+                          type="mesh"
+                          mesh="tongue"
+                          pos="0.0509079 -0.10392 -0.0091"
+                          quat="1 -1 0 0"
+                          material="black"
+                          contype="0"
+                          conaffinity="0"
+                          group="1"/>
+
+                      </body>
+                    </body>
+
+                  </body>
+
+                </body>
+
+              </body>
+
+            </body>
+
+          </body>
+
+        </body>
+
+      </body>
+
+    </body>
+
+  </worldbody>
+
+  <!-- CONTACT EXCLUSIONS -->
+
+  <contact>
+
+    <exclude body1="gripper_base" body2="left_driver"/>
+    <exclude body1="gripper_base" body2="right_driver"/>
+    <exclude body1="gripper_base" body2="left_spring_link"/>
+    <exclude body1="gripper_base" body2="right_spring_link"/>
+    <exclude body1="right_coupler" body2="right_follower"/>
+    <exclude body1="left_coupler" body2="left_follower"/>
+
+  </contact>
+
+  <!-- ROBOTIQ KINEMATICS -->
+
+  <tendon>
+
+    <fixed name="split">
+
+      <joint joint="right_driver_joint" coef="0.485"/>
+      <joint joint="left_driver_joint" coef="0.485"/>
+
+    </fixed>
+
+  </tendon>
+
+  <!-- EQUALITY CONSTRAINTS -->
+
+  <equality>
+
+    <connect
+      name="left_follower_coupler"
+      body1="left_follower"
+      body2="left_coupler"
+      anchor="-0.0179014 -0.00651468 0.0044"/>
+
+    <connect
+      name="right_follower_coupler"
+      body1="right_follower"
+      body2="right_coupler"
+      anchor="-0.0179014 -0.00651468 0.0044"/>
+
+    <joint
+      name="right_driver_joint_equal"
+      joint1="right_driver_joint"
+      joint2="left_driver_joint"
+      solref="0.005 1" solimp="0.99 0.999 0.0005" polycoef="0 1 0 0 0"/>
+    
+    <joint
+      name="left_pad_drive"
+      joint1="left_pad_slide_joint"
+      joint2="left_driver_joint"
+      solref="0.005 1" solimp="0.99 0.999 0.0005" polycoef="0 -0.025 0 0 0"/>
+
+    <joint
+      name="right_pad_drive"
+      joint1="right_pad_slide_joint"
+      joint2="right_driver_joint"
+      solref="0.005 1" solimp="0.99 0.999 0.0005" polycoef="0 -0.025 0 0 0"/>
+  </equality>
+
+  <!-- ROBOTIQ ACTUATOR (kept for compatibility, but not used) -->
+
+  <actuator>
+    <position name="act_joint_1" joint="joint_1" kp="500" kv="50" ctrlrange="-3.14159 3.14159"/>
+    <position name="act_joint_2" joint="joint_2" kp="500" kv="50" ctrlrange="-2.61799 2.61799"/>
+    <position name="act_joint_3" joint="joint_3" kp="400" kv="40" ctrlrange="-2.61799 2.61799"/>
+    <position name="act_joint_4" joint="joint_4" kp="300" kv="30" ctrlrange="-3.14159 3.14159"/>
+    <position name="act_joint_5" joint="joint_5" kp="300" kv="30" ctrlrange="-2.61799 2.61799"/>
+    <position name="act_joint_6" joint="joint_6" kp="200" kv="20" ctrlrange="-3.14159 3.14159"/>
+
+    <general
+      name="fingers_actuator"
+      tendon="split"
+      biastype="affine"
+      forcerange="-50 50"
+      ctrlrange="0 255"
+      gainprm="0.3137255 0 0"
+      biasprm="0 -100 -10"/>
+  </actuator>
+
+</mujoco>

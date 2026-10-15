@@ -1,0 +1,2 @@
+episode,seed,cube_start_x,cube_start_y,cube_start_yaw_deg,finger_cube_contact,cube_lift_dz_m,cube_final_x,cube_final_y,cube_final_z,success,failure_reason
+1,43,0.46218394101607285,-0.045622467636101324,-43.197337181320485,True,0.08223818461759436,0.4363197751367841,-0.28699913556192536,0.5845520303413393,False,RuntimeError: Viewer closed during episode.

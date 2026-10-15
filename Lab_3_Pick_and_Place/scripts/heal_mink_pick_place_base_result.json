@@ -1,0 +1,146 @@
+{
+  "scene": "C:\\ME639_robotics_Samidhra_26250041\\Lab_3_Pick_and_Place\\robot_descriptions\\heal_pnp_scene.xml",
+  "solver": "daqp",
+  "trajectory": "7th-order septic",
+  "ik_strategy": "TCP position + downward pinch-site axis; yaw unconstrained",
+  "grasp_method": "physical pad contact and contact friction; XML weld remains disabled",
+  "gripper_model_adjustments": {
+    "in_memory_only": true,
+    "driver_open_angle_rad": 0.9,
+    "close_torque_Nm": 1.5,
+    "pad_half_height_m": 0.011
+  },
+  "max_joint_speed_rad_s": 2.5,
+  "initial_cube_xyz": [
+    0.36,
+    0.15,
+    0.145
+  ],
+  "tray_xy": [
+    0.36,
+    -0.22
+  ],
+  "steps": {
+    "pregrasp": {
+      "start": [
+        0.5275599117927345,
+        -0.0002814465399989696,
+        0.6204154099229762
+      ],
+      "goal": [
+        0.35999999996944165,
+        0.14999999999180072,
+        0.19641687642229533
+      ],
+      "final": [
+        0.3598361124698537,
+        0.14995488213275446,
+        0.19612266826089952
+      ],
+      "error_m": 0.0003397840136881219,
+      "max_joint_target_delta_rad_per_cycle": 0.025674508029526123,
+      "duration_s": 2.0
+    },
+    "grasp": {
+      "start": [
+        0.3598361124698537,
+        0.14995488213275446,
+        0.19612266826089952
+      ],
+      "goal": [
+        0.35999999996944165,
+        0.14999999999180072,
+        0.09641687642229532
+      ],
+      "final": [
+        0.36017895150389617,
+        0.15015840452650628,
+        0.09658115865812608
+      ],
+      "error_m": 0.0002900074159542556,
+      "max_joint_target_delta_rad_per_cycle": 0.003281156427328291,
+      "duration_s": 1.8
+    },
+    "lift": {
+      "start": [
+        0.36031603153890834,
+        0.1502239042264486,
+        0.09667754727874817
+      ],
+      "goal": [
+        0.35999999996944165,
+        0.14999999999180072,
+        0.23641687642229534
+      ],
+      "final": [
+        0.35985018114927336,
+        0.149960213509465,
+        0.23612217533950092
+      ],
+      "error_m": 0.00033298253896183697,
+      "max_joint_target_delta_rad_per_cycle": 0.004243721227374486,
+      "duration_s": 2.0
+    }
+  },
+  "contact_observed": true,
+  "physical_pad_contact": true,
+  "lift_displacement_m": 0.011446459337310047,
+  "inside_xy": false,
+  "settled": false,
+  "tray_height_plausible": false,
+  "success": false,
+  "failure_reason": "Cube lift failed: 0.0114 m; required > 0.100 m.",
+  "grasp_tcp_error_m": 0.0002900074159542556,
+  "contacting_pad_geoms": [
+    "left_pad_geom",
+    "right_pad_geom"
+  ],
+  "pad_cube_contacts": [
+    {
+      "geom1": "cube_geom",
+      "geom2": "left_pad_geom",
+      "dist": -0.0019684188339657944
+    },
+    {
+      "geom1": "cube_geom",
+      "geom2": "left_pad_geom",
+      "dist": -0.0001636824975390144
+    },
+    {
+      "geom1": "cube_geom",
+      "geom2": "right_pad_geom",
+      "dist": -0.0006876819121654944
+    },
+    {
+      "geom1": "cube_geom",
+      "geom2": "right_pad_geom",
+      "dist": -0.0006316353303838262
+    },
+    {
+      "geom1": "cube_geom",
+      "geom2": "right_pad_geom",
+      "dist": -0.0003944434487975337
+    },
+    {
+      "geom1": "cube_geom",
+      "geom2": "right_pad_geom",
+      "dist": -0.0004136087824831217
+    }
+  ],
+  "tcp_cube_distance_at_grasp_m": 0.0251163401265025,
+  "gripper_close_elapsed_s": 0.03,
+  "grasp_weld_active": false,
+  "grasp_retry_used": false,
+  "pad_contact_after_lift": false,
+  "contacting_pads_after_lift": [],
+  "cube_before_lift_xyz": [
+    0.36871262368719054,
+    0.15384349376676168,
+    0.1200704169873842
+  ],
+  "cube_after_lift_xyz": [
+    0.3674414308906815,
+    0.16733449325023753,
+    0.13151687632469425
+  ]
+}

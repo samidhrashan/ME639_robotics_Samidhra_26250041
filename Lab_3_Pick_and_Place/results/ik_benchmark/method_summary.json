@@ -1,0 +1,19 @@
+[
+  {
+    "method": "mink",
+    "episodes_run": 1,
+    "successes": 0,
+    "success_rate": 0.0,
+    "mean_episode_wall_time_s": null,
+    "mean_subprocess_time_s": 0.9574421000434086,
+    "mean_solver_time_ms": null,
+    "mean_ik_solver_calls": null,
+    "mean_min_pad_table_clearance_mm": null,
+    "velocity_limit_saturations_total": 0,
+    "joint_limit_saturations_total": 0,
+    "joint_limit_violations_total": 0,
+    "failure_breakdown": {
+      "other": 1
+    }
+  }
+]

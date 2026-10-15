@@ -1,0 +1,13 @@
+BENCHMARK METHOD 3: QP-IK RESULTS SUMMARY
+========================================================
+Base seed: 42
+Episodes completed: 5
+Successful placements: 2
+Failed placements: 3
+Success rate: 40.00%
+CSV File: C:\ME639_robotics_Samidhra_26250041\Lab_3_Pick_and_Place\report\seeded_episode_results_qp.csv
+
+FAILURE BREAKDOWN:
+------------------------------
+ - RuntimeError: Grasp failed across candidate heights.: 2
+ - RuntimeError: Viewer closed.: 1

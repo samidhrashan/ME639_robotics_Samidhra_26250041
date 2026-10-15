@@ -1,0 +1,22 @@
+HEAL ROBOT WORKSPACE QUANTITATIVE SUMMARY
+==================================================
+Total Samples: 25,000
+Site Analyzed: right_center
+Maximum Radial Reach: 0.747 m
+
+TASK WORKSPACE (Reachable Position Envelope):
+  X: [-0.734, 0.739] m  (Span: 1.473 m)
+  Y: [-0.741, 0.743] m  (Span: 1.484 m)
+  Z: [-0.425, 1.068] m  (Span: 1.493 m)
+
+DEXTEROUS WORKSPACE (Top-down Grasping Subspace):
+  Points: 809 (3.2%)
+  X: [-0.664, 0.665] m  (Span: 1.329 m)
+  Y: [-0.695, 0.682] m  (Span: 1.377 m)
+  Z: [-0.387, 0.781] m  (Span: 1.168 m)
+
+WORKSPACE-CONSTRAINED TABLE SIZING RECOMMENDATION:
+  Table Center X: 0.000 m
+  Table Height  : 0.400 m (well inside dexterous Z range)
+  Table Length X: 0.500 m
+  Table Width  Y: 0.600 m

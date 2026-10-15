@@ -1,0 +1,12 @@
+BENCHMARK METHOD 2: DLS-IK RESULTS SUMMARY
+========================================================
+Base seed: 42
+Episodes completed: 9
+Successful placements: 8
+Failed placements: 1
+Success rate: 88.89%
+CSV File: C:\ME639_robotics_Samidhra_26250041\Lab_3_Pick_and_Place\report\seeded_episode_results_dls.csv
+
+FAILURE BREAKDOWN:
+------------------------------
+ - RuntimeError: Viewer closed.: 1

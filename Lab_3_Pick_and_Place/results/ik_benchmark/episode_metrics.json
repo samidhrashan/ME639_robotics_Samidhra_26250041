@@ -1,0 +1,16 @@
+[
+  {
+    "episode": 1,
+    "seed": 2026,
+    "cube_x": 0.3535786962735087,
+    "cube_y": 0.1527982633143031,
+    "cube_yaw": -0.051414675253937614,
+    "method": "mink",
+    "exit_code": 1,
+    "log_file": "C:\\ME639_robotics_Samidhra_26250041\\Lab_3_Pick_and_Place\\results\\ik_benchmark\\logs\\mink_ep001.log",
+    "result_json": "C:\\ME639_robotics_Samidhra_26250041\\Lab_3_Pick_and_Place\\results\\ik_benchmark\\episode_json\\mink_ep001.json",
+    "wall_clock_subprocess_s": 0.9574421000434086,
+    "failure_reason": "could not parse result JSON: Expecting value: line 13 column 15 (char 393)",
+    "failure_class": "other"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "ik_method": "qp",
+  "success": true,
+  "failure_reason": null,
+  "episode_wall_time_s": 47.099353199941106,
+  "ik_solver_calls": 7485,
+  "ik_solver_time_s": 7.8654638945590705,
+  "mean_solver_time_ms": 1.0508301796338104,
+  "velocity_limit_saturations": 924,
+  "joint_limit_saturations": 928,
+  "joint_limit_violations": 0,
+  "min_pad_table_clearance_m": 0.0007524404579876548,
+  "cube_pos": 

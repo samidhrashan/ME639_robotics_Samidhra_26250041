@@ -1,0 +1,22 @@
+{
+  "ik_method": "mink",
+  "success": true,
+  "failure_reason": null,
+  "episode_wall_time_s": 47.84943820000626,
+  "ik_solver_calls": 7095,
+  "ik_solver_time_s": 7.5393968019634485,
+  "mean_solver_time_ms": 1.0626352081696193,
+  "velocity_limit_saturations": 0,
+  "joint_limit_saturations": 0,
+  "joint_limit_violations": 0,
+  "min_pad_table_clearance_m": 0.0007411194291062212,
+  "cube_pos": [
+    0.3576,
+    -0.2194,
+    0.1462
+  ],
+  "inside_xy": true,
+  "settled": true,
+  "tray_height_plausible": true,
+  "lift_displacement": 0.1444
+}

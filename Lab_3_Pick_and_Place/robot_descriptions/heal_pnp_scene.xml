@@ -1,0 +1,170 @@
+<mujoco model="heal_pick_and_place">
+
+  <!-- IMPORTANT:
+       HEAL joint ranges and all Euler angles are specified in radians.
+       Explicitly set the MuJoCo compiler convention to radians so that
+       the included heal_arm_gripper.xml is interpreted correctly. -->
+  <compiler angle="radian"/>
+
+  <option
+    timestep="0.002"
+    gravity="0 0 -9.81"
+    integrator="implicitfast"
+    cone="elliptic"
+    impratio="10"
+    noslip_iterations="5"/>
+
+  <visual>
+    <global
+      azimuth="145"
+      elevation="-20"/>
+
+    <headlight
+      ambient="0.4 0.4 0.4"
+      diffuse="0.8 0.8 0.8"
+      specular="0.2 0.2 0.2"/>
+  </visual>
+
+  <asset>
+
+    <texture
+      type="skybox"
+      builtin="gradient"
+      rgb1="0.3 0.5 0.7"
+      rgb2="0 0 0"
+      width="512"
+      height="512"/>
+
+    <material
+      name="table_mat"
+      rgba="0.82 0.70 0.55 1.0"/>
+
+    <material
+      name="tray_mat"
+      rgba="0.1 0.4 0.8 0.85"/>
+
+    <material
+      name="cube_mat"
+      rgba="0.9 0.2 0.2 1.0"/>
+
+  </asset>
+
+
+  <worldbody>
+
+    <!-- LIGHT -->
+    <light
+      directional="true"
+      castshadow="false"
+      pos="0 0 3"
+      dir="0 0 -1"/>
+
+    <!-- WORK TABLE
+         Table top = 0.12 m -->
+    <body
+      name="work_table"
+      pos="0.36 0.0 0.06">
+
+      <geom
+        name="table_geom"
+        type="box"
+        size="0.17 0.36 0.06"
+        material="table_mat"
+        contype="1"
+        conaffinity="1"
+        friction="1.0 0.05 0.001"/>
+
+    </body>
+
+    <!-- TARGET TRAY -->
+    <body
+      name="target_tray"
+      pos="0.36 -0.22 0.125">
+
+      <geom
+        name="tray_base"
+        type="box"
+        size="0.08 0.08 0.005"
+        material="tray_mat"
+        contype="1"
+        conaffinity="1"
+        friction="1.0 0.05 0.001"/>
+
+      <geom
+        name="tray_back_wall"
+        type="box"
+        pos="0 0.075 0.025"
+        size="0.08 0.005 0.025"
+        material="tray_mat"
+        contype="1"
+        conaffinity="1"/>
+
+      <geom
+        name="tray_front_wall"
+        type="box"
+        pos="0 -0.075 0.025"
+        size="0.08 0.005 0.025"
+        material="tray_mat"
+        contype="1"
+        conaffinity="1"/>
+
+      <geom
+        name="tray_left_wall"
+        type="box"
+        pos="-0.075 0 0.025"
+        size="0.005 0.07 0.025"
+        material="tray_mat"
+        contype="1"
+        conaffinity="1"/>
+
+      <geom
+        name="tray_right_wall"
+        type="box"
+        pos="0.075 0 0.025"
+        size="0.005 0.07 0.025"
+        material="tray_mat"
+        contype="1"
+        conaffinity="1"/>
+
+      <site
+        name="tray_center"
+        pos="0 0 0.01"
+        size="0.005"/>
+
+    </body>
+
+    <!-- CUBE (2.4 cm — fits Robotiq closed gap of 2.8 cm) -->
+    <body
+      name="cube"
+      pos="0.36 0.15 0.15">
+
+      <freejoint
+        name="cube_joint"/>
+
+      <inertial
+        pos="0 0 0"
+        mass="0.02"
+        diaginertia="9.6e-7 9.6e-7 9.6e-7"/>
+
+      <geom
+        name="cube_geom"
+        type="box"
+        size="0.012 0.012 0.012"
+        material="cube_mat"
+        friction="0.8 0.1 0.01"
+        condim="6"
+        contype="1"
+        conaffinity="1"/>
+
+      <site
+        name="cube_center"
+        pos="0 0 0"
+        size="0.005"/>
+
+    </body>
+
+  </worldbody>
+
+  <include file="heal_arm_gripper_actuated.xml"/>
+
+</mujoco>

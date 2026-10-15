@@ -1,0 +1,58 @@
+[init] using scene: C:\ME639_robotics_Samidhra_26250041\Lab_3_Pick_and_Place\robot_descriptions\heal_pnp_scene.xml
+[init] IK method: mink
+[init] tray xy = [ 0.36 -0.22]
+[check] open jaw gap = 40.5 mm, pad centre is -0.0 mm from the pinch site along the tool axis
+[0] warm-up (cube settles on the table) / planning
+[init] cube after settling = [0.3621 0.1469 0.1319] (task: [0.36  0.15  0.132])
+[axes] approach(local)=[ 0. -0.  1.] closing(local)=[ 1.  0. -0.] yaw index=2
+[plan] waypoints: ['pre', 'grasp', 'lift', 'carry', 'place']
+[plan] tilt weight 1.0:
+  cand 0: dir=[0.76 0.65 0.  ] path=5.22 rad | pos err mm=[0.0, 0.1, 0.0, 0.0, 0.0] | yaw=0.000 tilt=0.0 deg | feasible=True
+  cand 1: dir=[-0.76 -0.65 -0.  ] path=6.76 rad | pos err mm=[0.0, 0.1, 0.0, 64.1, 40.5] | yaw=0.027 tilt=1.0 deg | feasible=False
+  cand 2: dir=[-0.65  0.76  0.  ] path=5.28 rad | pos err mm=[0.0, 0.1, 0.0, 0.0, 0.0] | yaw=0.000 tilt=0.0 deg | feasible=True
+  cand 3: dir=[ 0.65 -0.76 -0.  ] path=6.71 rad | pos err mm=[0.0, 0.1, 0.0, 0.0, 0.0] | yaw=0.000 tilt=0.0 deg | feasible=True
+[plan] chosen closing dir [0.764 0.646 0.   ], tilt weight 1.0, max tilt 0.0 deg
+[1] move to pre-grasp
+[pre-grasp refine] ref err 0.00 mm | real TCP [0.3621 0.1468 0.2501] err 0.18 mm
+[2] descend to grasp
+[descend] ref err 0.07 mm | real TCP [0.3629 0.147  0.1343] err 1.93 mm
+[geometry] cube centre=[0.3621 0.1469 0.1319]
+[geometry] left pad centre=[0.3444 0.1315 0.1342]
+[geometry] right pad centre=[0.3814 0.1626 0.1343]
+[clearance] table top z=0.1200 m; lowest pad z=0.1237 m; pad-to-table clearance=3.7 mm
+[3] close gripper
+[close] ctrl=111.8 pad forces L=7.31 N R=7.17 N, drivers=[0.349 0.349]
+[close] preload forces L=14.37 N R=14.09 N
+[4] lift
+[lift] ref err 0.05 mm | real TCP [0.3622 0.1467 0.2768] err 3.17 mm
+[lift] lift_displacement = 144.4 mm
+[5] transport
+[transport] ref err 0.02 mm | real TCP [ 0.3611 -0.2169  0.2811] err 3.42 mm
+[6] lower into tray
+[lower] ref err 0.03 mm | real TCP [ 0.3605 -0.2204  0.1967] err 1.82 mm
+[7] release
+[open] residual pad forces L=0.00 N R=0.00 N
+[8] retreat
+[retreat] ref err 0.03 mm | real TCP [ 0.3599 -0.2199  0.2782] err 1.81 mm
+[9] settle + evaluate
+Traceback (most recent call last):
+  File "C:\ME639_robotics_Samidhra_26250041\Lab_3_Pick_and_Place\scripts\heal_pick_place_ik_compare.py", line 984, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\ME639_robotics_Samidhra_26250041\Lab_3_Pick_and_Place\scripts\heal_pick_place_ik_compare.py", line 962, in main
+    json.dump(payload, f, indent=2)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samidhra\AppData\Local\Programs\Python\Python314\Lib\json\__init__.py", line 181, in dump
+    for chunk in iterable:
+                 ^^^^^^^^
+  File "C:\Users\samidhra\AppData\Local\Programs\Python\Python314\Lib\json\encoder.py", line 444, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\samidhra\AppData\Local\Programs\Python\Python314\Lib\json\encoder.py", line 413, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\samidhra\AppData\Local\Programs\Python\Python314\Lib\json\encoder.py", line 451, in _iterencode
+    newobj = _default(o)
+  File "C:\Users\samidhra\AppData\Local\Programs\Python\Python314\Lib\json\encoder.py", line 182, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type ndarray is not JSON serializable
+when serializing dict item 'cube_pos'

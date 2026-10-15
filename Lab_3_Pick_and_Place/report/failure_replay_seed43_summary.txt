@@ -1,0 +1,16 @@
+FRANKA + MINK RANDOMIZED-YAW PICK-AND-PLACE
+====================================================
+Base seed: 43
+Episodes requested: 1
+Episodes completed: 1
+Successful placements: 0/1
+Failed episodes: 1
+Success rate: 0.0%
+Cube X range (m): (0.41, 0.49)
+Cube Y range (m): (-0.05, 0.05)
+Cube yaw range (degrees): (-45.0, 45.0)
+CSV file: C:\ME639_robotics_Samidhra_26250041\Lab_3_Pick_and_Place\report\failure_replay_seed43.csv
+
+FAILURE BREAKDOWN
+------------------------
+RuntimeError: Viewer closed during episode.: 1

@@ -1,0 +1,84 @@
+{
+  "scene_xml": "C:\\ME639_robotics_Samidhra_26250041\\Lab_3_Pick_and_Place\\robot_descriptions\\heal_pnp_scene.xml",
+  "seed": 2026,
+  "samples": 12000,
+  "joint_ranges_rad": {
+    "joint_1": [
+      -3.12159,
+      3.12159
+    ],
+    "joint_2": [
+      -2.59799,
+      2.59799
+    ],
+    "joint_3": [
+      -2.59799,
+      2.59799
+    ],
+    "joint_4": [
+      -3.12159,
+      3.12159
+    ],
+    "joint_5": [
+      -2.59799,
+      2.59799
+    ],
+    "joint_6": [
+      -3.12159,
+      3.12159
+    ]
+  },
+  "downward_tolerance_deg": 15.0,
+  "downward_approach_samples": 144,
+  "downward_approach_fraction": 0.012,
+  "all_workspace_xyz_min_m": [
+    -0.8172388867270036,
+    -0.8365158398642006,
+    -0.5407787555750224
+  ],
+  "all_workspace_xyz_max_m": [
+    0.8229407331733654,
+    0.8281933852129545,
+    1.0806923872234786
+  ],
+  "downward_workspace_xyz_min_m": [
+    -0.6261643080701019,
+    -0.6477232769346976,
+    -0.45146958683817096
+  ],
+  "downward_workspace_xyz_max_m": [
+    0.6718181816201915,
+    0.6489590433063426,
+    0.5140783980297647
+  ],
+  "approx_dexterous_voxels_3_or_more_yaw_bins": 0,
+  "dexterous_voxel_size_m": 0.025,
+  "yaw_bins": 12,
+  "table_geometry": {
+    "body_position_local_m": [
+      0.36,
+      0.0,
+      0.06
+    ],
+    "geom_half_sizes_m": [
+      0.17,
+      0.36,
+      0.06
+    ],
+    "top_z_m": 0.12,
+    "x_bounds_m": [
+      0.18999999999999997,
+      0.53
+    ],
+    "y_bounds_m": [
+      -0.36,
+      0.36
+    ],
+    "dimensions_m": [
+      0.34,
+      0.72,
+      0.12
+    ]
+  },
+  "interpretation_note": "Random configuration sample cloud, not a formal IK reachability proof. Dexterous voxel count is an observed yaw-diversity proxy, not a guarantee of all orientations."
+}
