@@ -2,7 +2,7 @@
 This repository is starter code for ITR Assignment
 
 youtube link for the video
- HEAL : https://youtu.be/dlYgx40yN9M?si=ZPK2xqoztPnkH_7O 
+ HEAL : https://youtu.be/NjPJ7hXsDbk?si=YyzvKWzdJD-jhEdb
  FRANKA : https://youtu.be/rED1jiBpfvQ?si=sEr_bMgvj2juzm-O
  
  THERE IS ISSUE IN RUNNING 25 EPISODE(PLOTTING SCRIPT) :
